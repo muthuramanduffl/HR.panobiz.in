@@ -1,0 +1,76 @@
+.upload-kyc {
+    background: #fff;
+    padding: 20px 5%;
+}
+.upload-kyc .form-group label {
+    font-size: 14px !important;
+    color: #333333d6 !important;
+}
+.upload-kyc .form-group .custom-file label {
+    font-size: 13px !important;
+    font-weight: 500;
+    line-height: 25px;
+}
+.upload-kyc .form-group .custom-file-label::after {
+    line-height: 25px;
+}
+
+.kyc-docs {
+    background: #fff;
+    padding: 20px 5%;
+}
+.kyc-docs .fileView a {
+    color: #000;
+    text-decoration: none !important;
+}
+.kyc-docs .fileView a img {
+    width: 17px;
+    margin-right: 5px;
+    margin-top: -3px; 
+    display: none;   
+}
+.kyc-docs hr {
+    margin: 6px auto;
+}
+.kyc-docs label img {
+    width: 11px;
+    margin-right: 2px;
+    margin-top: -3px;
+    margin-left: -17px;
+    opacity: 0.8;
+}
+.kyc-photo {
+    width: 65px;
+    display: block;
+    margin-left: auto;
+    position: absolute;
+    right: -10px;
+    top: -53px;
+    height: 65px;
+    object-fit: cover;
+}
+.upload-kyc .custom-file a img {
+    width: 14px;
+    margin-right: 5px;
+}
+.upload-kyc .custom-file a {
+    font-size: 13px;
+    color: #000;
+}
+.upload-kyc label img {
+    width: 11px;
+    margin-right: 2px;
+    margin-top: -3px;
+    margin-left: -17px;
+    opacity: 0.8;
+}
+
+
+@media (min-width: 767px) {
+    .kyc-docs {
+        margin-top: 75px;
+    }
+    .upload-kyc {
+        margin-top: 75px; 
+    }
+}

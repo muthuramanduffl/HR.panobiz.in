@@ -1,0 +1,118 @@
+.emp-listing-table {
+    min-width: 1200px;
+}
+/* .btn-danger {
+    background: #DA2B41 !important;
+} */
+.attendance-history tbody td .btn {
+    line-height: 20px;
+}
+
+.time-date .date {
+    display: flex;
+  }
+.time-date .date label {
+    align-self: center;
+    font-weight: 600;
+  }
+.time-date .date p {
+    font-weight: 400;
+    margin-bottom: 0px;
+    color: #000;
+    padding-left: 5px;
+  }
+
+
+  /*popup*/
+  .overlay-popup-bg {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	display: none;
+	z-index: 11111;
+}
+.popup-sec {
+	margin: 35px auto;
+	padding: 30px 20px;
+	background: #fff;
+	border-radius: 5px;
+	/* width: 30%; */
+	position: relative;
+	transition: all .5s ease-in-out;
+	top: 100px;
+}
+.popup-sec .close {
+	position: absolute;
+	top: 6px;
+	right: 10px;
+	transition: all 200ms;
+	font-size: 23px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+    cursor: pointer;
+}
+.popup-sec .close:hover {
+  	color: #C54E47;
+}
+.popup-sec .content {
+  	max-height: 30%;
+  	overflow: auto;
+/*	margin-top: 5%;*/
+	text-align: center;
+/*	font-weight: bold;*/
+padding: 5px;
+}
+.popup-sec .content h3 {
+    font-size: 20px;
+    margin: auto;
+}
+.popup-sec .content h4 {
+    color: #000;
+    font-weight: bold;
+}
+.popup-sec .content a {
+    font-size: 15px;
+}
+.popup-sec .content a:hover {
+    text-decoration: none;
+}
+
+.cmn-btn {
+    padding: 1px 12px;
+    /* margin: auto; */
+    display: block;
+    background: linear-gradient(#141414, #1e1e1e);
+    color: #fff;
+    font-size: 13px;
+}
+.text-success-dark {
+    color: green;
+}
+
+#more {display: none;}
+.rd-more {
+    line-height: 18px !important;
+    padding-bottom: 3px !important;
+}
+.view-activity-report td, .view-activity-report th {
+    vertical-align: top;
+}
+
+
+
+@media (max-width: 767px) {
+    .popup-sec {
+        top: 0;
+    }
+}
+
+@media (min-width: 1199px) {
+    .emp-listing-table {
+        min-width: auto;
+      }
+}

@@ -1,0 +1,293 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Supervisor | Panobiz Attendance Dashboard</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="assets/img/fav-icon.png" type="image/x-icon"/>
+
+	<!-- Fonts and icons -->
+	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['assets/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/atlantis.min.css">
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link rel="stylesheet" href="../assets/css/demo.css">
+	<link rel="stylesheet" href="../assets/css/inner-page.css">
+	<link rel="stylesheet" href="../assets/css/menu.css">
+
+	<link rel="stylesheet" href="../assets/css/history.css">
+	<link rel="stylesheet" href="../assets/css/kyc-docs.css">
+
+	<link rel="stylesheet" href="../assets/css/jquery-ui.css" />
+
+	<link rel="stylesheet" href="../assets/css/employee-listing.css" />
+
+     <asp:ContentPlaceHolder id="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+	
+<!--======== HEADER ========-->
+	<div class="desk-bg">
+		<header class="col-lg-11 mx-auto">
+			<div class="menu-bar">
+				<img src="../assets/images/menu-bar.png">
+			</div>
+			<div class="logo-img">
+				<img src="../assets/img/logo.png">
+			</div>
+			<div class="logOut">
+				<div class="clock" style="display:none">
+					<div class="date d-flex"><div id="Date"></div></div>
+					<div class="time d-flex justify-content-end">
+						<ul class="pl-0 mb-0 d-flex">
+							<li id="hours"></li>
+							<li id="point">:</li>
+							<li id="min"></li>
+							<li id="point">:</li>
+							<li id="sec"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wel-name align-self-center">
+					<span><asp:Label ID="lblempname" runat="server"></asp:Label></span>
+				</div>
+
+                <li class="nav-item dropdown hidden-caret submenu">
+					<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-bell" onclick="UpdateNotificationCount()">
+						<span class="notification" id="spnnotify" runat="server">
+                            <span id="spnNotifyCount" runat="server" ></span>
+						</span>
+                            </i>
+					</a>
+                    <asp:HiddenField id="hdnEmpID" runat="server"/>
+					<ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+						<li>
+							<div class="dropdown-title"><span><asp:Label ID="lblNotifyDesc" runat="server" CssClass="text-dark"></asp:Label></span></div>
+						</li>
+						<li>
+							<div class="scroll-wrapper notif-scroll scrollbar-outer" style="position: relative;"><div class="notif-scroll scrollbar-outer scroll-content" style="height: auto; margin-bottom: -17px; margin-right: -17px; max-height: 200.8px;">
+								<div class="notif-center">
+									
+                                   <asp:Label ID="lblhead1" runat="server" CssClass="text-dark" Font-Bold="true"></asp:Label>
+                                    <hr style="border-style: dashed; width: 85%; margin: 10px auto;">
+									<asp:Repeater ID="rptr" runat="server" OnItemDataBound="OnAllItemDataBound">
+                                        <ItemTemplate>
+                                            <asp:HiddenField Value='<%#Eval("LeaveRequestStatus")%>' id="hdnLeaveRequestStatus" runat="server"/>
+                                             <asp:HiddenField Value='<%#Eval("LeaveFor")%>' id="hdnLeaveFor" runat="server"/>
+                                             <asp:HiddenField Value='<%#Eval("LeaveFromDate")%>' id="hdnleavefromdate" runat="server"/>
+                                             <asp:HiddenField Value='<%#Eval("LeaveToDate")%>' id="hdnleavetodate" runat="server"/>
+
+											<div style="width: 85%;margin: 10px auto;display: flex;justify-content: space-between;">
+												<span style="color:black; align-self: center;"><asp:Label ID="lblleavenotify" runat="server" CssClass="text-dark"></asp:Label></span>
+											</div> 
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <div id="divKYC" runat="server">
+                                    <asp:Label ID="lblhead2" runat="server" CssClass="text-dark" Font-Bold="true"></asp:Label>
+                                    <hr style="border-style: dashed; width: 85%; margin: 10px auto;">
+                                    <asp:Label ID="lblkycdoc" runat="server" CssClass="text-dark"></asp:Label>
+                                        </div>
+                                    <asp:Label ID="lblhead3" runat="server" CssClass="text-dark" Font-Bold="true"></asp:Label>
+                                    <hr style="border-style: dashed; width: 85%; margin: 10px auto;">
+									<asp:Repeater ID="rptrE" runat="server" OnItemDataBound="OnAllExecItemDataBound">
+                                        <ItemTemplate>
+                                            <asp:HiddenField Value='<%#Eval("LeaveRequestStatus")%>' id="hdnExLeaveRequestStatus" runat="server"/>
+                                             <asp:HiddenField Value='<%#Eval("LeaveFor")%>' id="hdnExLeaveFor" runat="server"/>
+                                             <asp:HiddenField Value='<%#Eval("LeaveFromDate")%>' id="hdnExleavefromdate" runat="server"/>
+                                             <asp:HiddenField Value='<%#Eval("LeaveToDate")%>' id="hdnExleavetodate" runat="server"/>
+                                              <asp:HiddenField Value='<%#Eval("EmpID")%>' id="hdnExecEmpID" runat="server"/>
+
+											<div style="width: 85%;margin: 10px auto;display: flex;justify-content: space-between;">
+												<span style="color:black; align-self: center;"><asp:Label ID="lblExleavenotify" runat="server" CssClass="text-dark"></asp:Label></span>
+											</div> 
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:Label ID="lblnomsg" runat="server" CssClass="text-dark" Font-Bold="true"></asp:Label>
+								</div>
+							</div>
+						</div>
+                             
+						</li>
+					</ul>
+				</li>
+			</div>
+		</header>
+		<div class="menuList">
+			<ul class="menu mobile">
+				<img class="menu-bar closeBtn" src="../assets/images/close.png">
+				<div class="menu-header mb-0">
+					<img src="../assets/img/logo.png">
+				</div>
+				<div class="menu-title-section">
+					<h4>My Logs</h4>
+				</div>
+				<li><a href="punch-in-out.aspx" class="menu__item <%= GetCss("PunchInPunchOut") %>"><img src="../assets/images/icons/login.png"> Punch In / Punch Out</a></li>
+				<%--<li><a href="attendance-history.aspx" class="menu__item <%= GetCss("AttendanceHistory") %>"><img src="../assets/images/icons/attendance.png"> Attendance History</a></li>--%>
+				<li><a href="apply-leave.aspx" class="menu__item <%= GetCss("ApplyLeave") %>"><img src="../assets/images/icons/leave.png">Apply Leave</a></li>
+				<li><a href="leave-history.aspx" class="menu__item <%= GetCss("LeaveHistory") %>"><img src="../assets/images/icons/attendance.png"> Leave Request Status</a></li>
+				<li><a href="" class="menu__item"><img src="../assets/images/icons/holidays.png"> Holiday</a></li>
+				<li><a href="activity-report.aspx" class="menu__item <%= GetCss("ActivityHistory") %>""><img src="../assets/images/icons/activity.png"> Activity History</a></li>
+				<li data-dropdown="help-desk" class="dropdown-parent-menu"><a href="#" class="menu__item  d-flex align-items-center justify-content-between"> <div><img src="../assets/images/icons/activity.png">Help Desk </div>  <i class="carrow cdown mr-3"></i></a></li>
+                <div id="help-desk" style="display:none" class="dropdown-parent">
+				<li><a href="addescalation.aspx" class="menu__item <%= GetCss("AddEscalation") %>""><img src="../assets/images/icons/activity.png" style="visibility:hidden;"> Raise a New Query</a></li>
+				<li class="mt-0"><a href="escalation-listing.aspx" class="menu__item <%= GetCss("ViewEscalation") %>""><img src="../assets/images/icons/activity.png" style="visibility:hidden">View Past Queries</a></li>
+				</div>
+				<!--<li><a href="kycdoc.aspx" class="menu__item <%= GetCss("KYCDocs") %>"><img src="../assets/images/icons/doc.png"> KYC Document</a></li>-->
+				<li><a href="personal-details.aspx" class="menu__item <%= GetCss("personalDetails") %>"><img src="../assets/images/icons/personal.png"> Personal Details</a></li>
+				<li><a href="Employee-Information-sheet.aspx" class="menu__item <%= GetCss("empInfo") %>"><img src="assets/images/icons/activity.png"> Employee Information Sheet</a></li>
+				<li><a href="policy.aspx" class="menu__item <%= GetCss("policy") %>"><img src="../assets/images/icons/policy.png"> Policy</a></li>
+                <li><asp:LinkButton ID="btnLogout" runat="server" CssClass="menu__item" onclick="btnLogout_Click" Text="Log Out" ForeColor="White"></asp:LinkButton></li>
+
+				<div class="menu-title-section">
+					<h4>Executive</h4>
+				</div>
+				<li><a href="employee-listing.aspx" class="menu__item <%= GetCss("empListing") %>"><img src="../assets/images/icons/attendance.png"> Employee Listing</a></li>
+				<li><a href="emp-todayattendance.aspx" class="menu__item <%= GetCss("emptodayattendance") %>"><img src="../assets/images/icons/attendance.png"> Today's Attendance</a></li>
+				<li><a href="employee-leaverequest.aspx" class="menu__item <%= GetCss("empLeaveRequest") %>"><img src="../assets/images/icons/attendance.png"> Employee Leave Request</a></li>
+				<!--<li><a href="attendance-report.aspx" class="menu__item <%= GetCss("attendancereport") %>"><img src="../assets/images/icons/attendance.png"> Attendance Report</a></li>-->
+                <!--<li><a href="leave-report.aspx" class="menu__item <%= GetCss("leaveReport") %>"><img src="../assets/images/icons/policy.png"> Leave Report</a></li>-->
+
+				<li><%--<a href="index-new.aspx" class="menu__item"><img src="../assets/images/icons/logout.png"> Logout</a>--%>
+                    <asp:LinkButton ID="lnk1" runat="server" CssClass="menu__item" Text="" ForeColor="White"></asp:LinkButton>
+				</li>
+			</ul>
+		</div>
+		<div class="pageTitle">
+			<h2>Panobiz Attendance Dashboard</h2>
+			<hr>
+			<h4><asp:Label ID="lblPageTitle" runat="server" Text=""></asp:Label><div class="add-activity-date" style="display:none;">
+			<span>&nbsp;|&nbsp;</span>
+				<span id="Date1"></span>
+			</div></h4>
+		</div>
+		
+		<div class="col-11 mx-auto employee-id-section mt-0 mb-4">
+			<div class="employee-id_det">
+				<h6 class="mb-0 d-flex"><asp:Label ID="lblEmpID" runat="server" Text="" CssClass="d-md-flex d-block"></asp:Label> <span>&nbsp; - &nbsp;</span></h6>
+				<h4><asp:Label ID="lblEname" runat="server" Text=""></asp:Label></h4>
+				<h6><asp:Label ID="lblDept" runat="server" Text=""></asp:Label></h6>
+			</div>
+			<div class="employee-icon">
+				<img src="../assets/images/user-icon.png">
+			</div>
+		</div>
+	</div>
+	<!--======== END: HEADER ========-->
+
+	<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+<footer>
+	<p>	&#169;
+		<script type="text/javascript">
+			var today = new Date()
+			var year = today.getFullYear()
+			document.write(year)
+		</script> HR Panobiz
+	</p>
+</footer>
+	<script>
+
+	 $('.dropdown-parent-menu').click(function(){
+			var getdropdownid = $(this).attr('data-dropdown');
+			$('#'+getdropdownid).slideToggle();
+			$(this).toggleClass('selected');
+		})
+		//footer position
+		$(window).scroll(function(){
+			if ($(this).scrollTop() > 50) {
+			$('footer').css('position', 'unset');
+			} else {
+			$('footer').css('position', 'fixed');
+			}
+		});
+
+        //file upload
+		$(".custom-file-input").on("change", function() {
+		var fileName = $(this).val().split("\\").pop();
+		$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+		});
+		
+		//menu
+		$(document).ready(function() {
+			$('.menu-bar').click(function(){
+				$('body').toggleClass('menu_shown');
+			});
+		});
+
+		$(document).ready(function() {
+		var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
+
+		var newDate = new Date();
+		newDate.setDate(newDate.getDate());
+		$('#Date').html([newDate.getDate()] + ' ' + monthNames[newDate.getMonth()] + ', ' + newDate.getFullYear());
+
+		var newDate1 = new Date();
+		newDate1.setDate(newDate1.getDate());
+		$('#Date1').html([newDate1.getDate()] + ' ' + monthNames[newDate1.getMonth()] + ', ' + newDate1.getFullYear());
+
+		var newDate2 = new Date();
+		newDate2.setDate(newDate2.getDate());
+		$('#Date2').html([newDate2.getDate()] + ' ' + monthNames[newDate2.getMonth()] + ', ' + newDate2.getFullYear());
+		
+		setInterval( function() {
+		var seconds = new Date().getSeconds();
+		$("#sec").html(( seconds < 10 ? "0" : "" ) + seconds);
+		},1000);
+		
+		setInterval( function() {
+		var minutes = new Date().getMinutes();
+		$("#min").html(( minutes < 10 ? "0" : "" ) + minutes);
+		},1000);
+		
+		setInterval( function() {
+		var hours = new Date().getHours();
+		$("#hours").html(( hours < 10 ? "0" : "" ) + hours);
+		}, 1000); 
+		});
+function UpdateNotificationCount() {
+
+    var txtEmpID = "E1002";
+    if (txtEmpID != '') {
+        $.ajax({
+            type: "POST",
+            url: "NotifyAjaxCall.aspx/UpdateNotification",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+             data: '{stEmpID: "' + $("#<%=hdnEmpID.ClientID%>")[0].value + '" }',
+            success: function (data) {
+                
+                document.getElementById("spnnotify").style.display = "none"; 
+                document.getElementById("<%=lblNotifyDesc.ClientID%>").innerHTML = "";
+               //alert(data.d);
+            },
+            error: (xhr) => {
+                var responseText = jQuery.parseJSON(xhr.responseText);
+                alert(responseText.Message);
+        }
+        });
+    }
+}  
+		</script>
+</form>
+</body>
+</html>

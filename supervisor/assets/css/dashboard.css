@@ -1,0 +1,154 @@
+/*
+.bg-gradient-red {
+    background: linear-gradient(87deg,#f5365c 0,#f56036 100%) !important;
+}
+.bg-gradient-orange {
+    background: linear-gradient(87deg,#fb6340 0,#fbb140 100%) !important;
+}
+.bg-gradient-green {
+    background: linear-gradient(87deg,#2dce89 0,#2dcecc 100%) !important;
+}
+.bg-gradient-info {
+    background: linear-gradient(87deg,#11cdef 0,#1171ef 100%) !important;
+}
+*/
+
+
+
+/*******************/
+.card-stats .card-header.card-header-icon i {
+    font-size: 36px;
+    line-height: 56px;
+    width: 56px;
+    height: 56px;
+    text-align: center;
+    display: block;
+    color: #fff;
+}
+.card-icon {
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14),0 7px 10px -5px rgba(76,175,80,.4);
+/*    background: linear-gradient(60deg,#66bb6a,#43a047);*/
+    border-radius: 3px;
+background-color: #999;
+padding: 15px;
+margin-top: -40px;
+margin-right: 15px;
+float: left;
+}
+.card-stats .card-category {
+    text-align: left;
+    color: #000;
+font-size: 15px;
+}
+.card-stats .card-title {
+    text-align: left;
+    font-weight: bold;
+font-size: 20px;
+color: #142e54;
+}
+.card-stats .icon-big {
+    background: #febe10;
+border-radius: 4px;
+}
+.card.bg-success, .card .card-header-success .card-icon, .card .card-header-success .card-text, .card .card-header-success:not(.card-header-icon):not(.card-header-text), .card.card-rotate.bg-success .back, .card.card-rotate.bg-success .front {
+    background: linear-gradient(60deg,#66bb6a,#43a047);
+        background-color: rgba(0, 0, 0, 0);
+}
+
+.card.bg-warning, .card .card-header-warning .card-icon, .card .card-header-warning .card-text, .card .card-header-warning:not(.card-header-icon):not(.card-header-text), .card.card-rotate.bg-warning .back, .card.card-rotate.bg-warning .front {
+    background: linear-gradient(60deg,#ffa726,#fb8c00);
+        background-color: rgba(0, 0, 0, 0);
+}
+.card.bg-danger, .card .card-header-danger .card-icon, .card .card-header-danger .card-text, .card .card-header-danger:not(.card-header-icon):not(.card-header-text), .card.card-rotate.bg-danger .back, .card.card-rotate.bg-danger .front {
+    background: linear-gradient(60deg,#ef5350,#e53935);
+        background-color: rgba(0, 0, 0, 0);
+}
+.card.bg-info, .card .card-header-info .card-icon, .card .card-header-info .card-text, .card .card-header-info:not(.card-header-icon):not(.card-header-text), .card.card-rotate.bg-info .back, .card.card-rotate.bg-info .front {
+    background: linear-gradient(60deg,#26c6da,#00acc1);
+        background-color: rgba(0, 0, 0, 0);
+}
+.f-16 {
+    font-size: 16px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #142e54;
+}
+.table thead th {
+    font-size: 14px !important;
+}
+.table tr td img {
+    width: 13px;
+}
+.dataTables_wrapper {
+    padding: 0px;
+}
+.nav-pills.nav-pills-icons i {
+    font-size: 15px;
+    line-height: unset;
+display: unset;
+margin-right: 4px;
+}
+.nav-pills.nav-secondary .nav-link.active {
+    height: auto !important;
+}
+.nav-pills.nav-secondary .nav-link {
+    height: auto !important;
+}
+.card-body .nav-pills {
+    flex-wrap: unset;
+}
+.table > tbody > tr > td, .table > tbody > tr > th {
+    padding: 16px 10px;
+}
+.table td, .table th {
+    height: auto;
+}
+.table thead th {
+    padding: 16px 10px;
+}
+.table thead {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.table {
+    border-spacing: 0 15px;
+    border-collapse: separate;
+}
+.table tbody tr {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.card-stats i {
+    font-size: 40px;
+    color: #142e54;
+}
+@media (max-width: 600px) {
+    .nav-pills.nav-pills-icons .nav-link, .nav-pills.nav-pills-icons .nav-link.active {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .footer .container-fluid .copyright {
+        margin-bottom: 0px;
+        margin-top: 0;
+    }
+    .footer .container-fluid {
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 13px;
+    }
+    .card .card-title {
+        font-size: 15px;
+    }
+    .card-stats i {
+        font-size: 30px;
+    }
+    .table {
+        width: 1000px;
+    }
+    .card-stats .card-category {
+        font-size: 14px;
+    }
+}

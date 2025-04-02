@@ -1,0 +1,118 @@
+.attendance-history thead {
+    background: #141414;
+}
+.attendance-history thead th {
+    color: #fff;
+}
+.attendance-history tbody td .btn {
+    padding: 1px 12px;
+    margin: auto;
+    display: block;
+    background: linear-gradient(#141414, #1e1e1e);
+    color: #fff;
+    font-size: 13px;
+}
+
+.disable  {
+    display: inline-block !important;
+    background: LIGHTGRAY !important;
+    color: #787474 !important;
+    border: none !important; 
+    cursor: no-drop !important;
+}
+
+
+.pagination {
+    width: 98%;
+    margin: 5% auto auto;
+    text-align: center;
+    justify-content: center;
+}
+.pagination li {
+    width: 23px;
+    height: 23px;
+    background: #f1f2f2;
+    margin: auto 2px;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.pagination li.active {
+    background: #141414;
+    color: #fff;
+}
+.pagination li.active span {
+    color: #fff;
+}
+.disabledBtn {
+    pointer-events: none;
+    opacity: .3;
+}
+.filter-section img {
+    width: 20px;
+}
+.filter-section .form-control {
+    padding: 4px 5px !important;
+    font-size: 14px;
+}
+
+.attendance-tab ul {
+    padding-left: 0px;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+.attendance-tab ul li {
+    border: 1px solid #000;
+    border-radius: 4px;
+    color: #000;
+    font-size: 13px;
+    padding: 0;
+    margin: 5% 4px auto;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+}
+.attendance-tab ul li.active {
+    background: #141414;
+    color: #fff;
+    position: relative;
+}
+.attendance-tab ul li.active:after {
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #141414;
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.attendance-tab ul li.attactive {
+    position: relative;
+}
+.attendance-tab ul li.attactive:after {
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #141414;
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+@media (min-width: 767px) {
+    .attendance-tab ul li {
+        margin-top: auto;
+        font-size: 14px;
+        padding: 0;
+    }
+}

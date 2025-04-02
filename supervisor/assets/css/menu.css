@@ -1,0 +1,147 @@
+header .menu-bar {
+    align-self: center;
+    cursor: pointer;
+}
+header .menu-bar img {
+    width: 20px;
+}
+header {
+    padding-top: 5%;
+    display: flex;
+}
+header .logo-img img {
+    width: 60px;
+    margin-left: 28%;
+}
+header .logOut {
+    margin-left: auto;
+    align-self: center;
+}
+header .logOut img {
+    width: 18px;
+    filter: invert(100);
+    cursor: pointer;
+}
+  
+.mobile.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 85%;
+    height: 100vh;
+    text-align: center;
+    /* padding-top: 10%; */
+    background: #fff;
+    z-index: 10;
+    transition: all 0.4s ease-in-out;
+    transform: translateX(-100%);
+    /* padding-left: 5%;
+    padding-right: 5%; */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    padding: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.mobile.menu:after {
+    content: '';
+    background: url(../images/bottom-bg.png);
+    width: 100%;
+    height: 52px;
+    position: absolute;
+    left: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    bottom: 0;
+}
+  
+.menu_shown .mobile.menu {
+    transform: translateX(0);
+}
+.mobile.menu li {
+    list-style-type: none;
+    text-align: left;
+    padding-left: 5%;
+}  
+.mobile.menu li:last-child {
+    border-top: 1px solid #cccccc26;
+    border-bottom: 1px solid #cccccc26;
+    margin-top: 6%;
+}
+.mobile .menu__item {
+    display: block;
+    line-height: 2;
+    padding: 10px 0;
+    color: #000 !important;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+.menuList img.closeBtn {
+    width: 15px;
+    cursor: pointer;
+    position: absolute;
+    right: 0%;
+    top: 5%;
+    filter: invert(100);
+}
+body.menu_shown .menuList img.closeBtn {
+    right: -10%;
+}
+.menuList .menu-header {
+    background-image: url(../images/inner-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 156px;
+    width: 100%;
+    padding-top: 5%; 
+    margin-bottom: 5%;   
+}
+.menuList .menu-header img {
+    width: 110px;
+    margin: auto;
+    display: block;
+    position: unset;
+    filter: unset;
+}
+body.menu_shown::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+.mobile .menu__item img {
+    width: 23px;
+    margin-right: 15px;
+}
+footer {
+    text-align: center;
+    font-weight: 400;
+    color: #ffffff85;
+    margin-top: 12%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1c1c1c;
+    padding: 3px;
+}
+footer p {
+    font-size: 13px;
+    margin-bottom: 0px;
+}
+
+.carrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  .carrow.cdown {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  } 

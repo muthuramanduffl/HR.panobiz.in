@@ -1,0 +1,33 @@
+.upload-kyc {
+    background: #fff;
+    padding: 20px 5%;
+}
+.upload-kyc .form-group label {
+    font-size: 14px !important;
+    color: #333333d6 !important;
+}
+.upload-kyc .form-group .custom-file label {
+    font-size: 13px !important;
+    font-weight: 500;
+    line-height: 25px;
+}
+.upload-kyc .form-group .custom-file-label::after {
+    line-height: 25px;
+}
+
+.kyc-docs {
+    background: #fff;
+    padding: 20px 5%;
+}
+.kyc-docs .fileView a {
+    color: #000;
+    text-decoration: none !important;
+}
+.kyc-docs .fileView a img {
+    width: 17px;
+    margin-right: 5px;
+    margin-top: -3px;    
+}
+.kyc-docs hr {
+    margin: 6px auto;
+}

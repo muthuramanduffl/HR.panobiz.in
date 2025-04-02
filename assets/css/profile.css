@@ -1,0 +1,15 @@
+.menu-bar {
+    display: none;
+}
+header .logo-img img {
+    margin-left: 0;
+}
+header .logo-img {
+    margin: auto;
+}
+.employee-id-section {
+    display: none;
+}
+header .logOut {
+    display: none;
+}

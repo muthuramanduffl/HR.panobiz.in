@@ -1,0 +1,50 @@
+.form-control {
+    height: 40px !important;
+}
+.ui-datepicker-calendar thead {
+    background: transparent;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: 1px solid #5e5598 !important;
+    background: rgba(26, 14, 109, 0.7) !important;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: 1px solid #3e376c !important;
+    background: #3e376c !important;
+}
+select option:checked,
+select option:hover {
+  /* box-shadow: 0 0 10px 100px #000 inset; */
+}
+
+select:focus>option:checked {
+  /* background: #f00 !important; */
+}
+@media (max-width: 600px) {
+    .card .card-body, .card-light .card-body {
+        padding: 10px;
+    }
+    .card-header {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    .card .card-title {
+        font-size: 15px;
+    }
+    .first-field {
+        padding-top: 0px !important;
+    }
+    .main-panel .page-header .breadcrumbs {
+        margin-left: 7px;
+        margin-top: 2px;
+    }
+    .footer .container-fluid .copyright {
+        margin-bottom: 0px;
+        margin-top: 0;
+    }
+    .footer .container-fluid {
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 13px;
+    }
+}

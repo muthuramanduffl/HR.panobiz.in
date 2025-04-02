@@ -1,0 +1,325 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    background: linear-gradient(#2E3192, #29ABE2);
+    color: #7e8ba3;
+    font: 300 1rem/1.5 Helvetica Neue, sans-serif;
+    margin: 0;
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
+.employee-id-section {
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: 14px;
+    margin-top: 12%;
+    display: flex;
+    justify-content: space-between;
+    padding: 4%;
+}
+.employee-id-section .employee-icon {
+    align-self: center;
+}
+.employee-id-section .employee-icon img {
+    width: 32px;
+}
+.employee-id_det h6 {
+    color: #000;
+}
+.employee-id_det h4 {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #2e3192;
+}
+.employeeDetails-section {
+    width: 100%;
+    margin-top: 9%;
+}
+.employeeDetails-section .name-label span {
+    font-size: 13px;
+    color: #000000ba;
+}
+.employeeDetails-section .name-label, .employeeDetails-section .date-label {
+    padding: 0 5%;
+}
+.employeeDetails-section .name-label {
+    display: flex;
+    justify-content: space-between;
+}
+.employeeDetails-section .name-label h6, .employeeDetails-section .date-label h6 {
+    color: #000;
+    margin-bottom: 0px;
+}
+.employeeDetails-section .name-label h4 {
+    color: #2e3192;
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 0px;
+}
+.employeeDetails-section hr {
+    border-width: 3px;
+    border-color: rgba(0, 0, 0, 0.04);
+}
+.date-label .date-block {
+    background: linear-gradient(151deg, #2E3192, #29ABE2);
+    border-radius: 16px;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 23px;
+    margin-top: 7px;
+}
+.employeeDetails-section .vert-line {
+    width: 1px;
+    /* height: 100%; */
+    background: #ffffff1a;
+}
+.date-block .date-field, .date-block .day-field, .date-block .month-field {
+    padding: 23px 0;
+}
+
+/******** Toggle button *************/
+.toggle-btn {
+    width: 50px;
+    height: 24px;
+    margin: 0px;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    background:#858484;
+    cursor: pointer;
+    -webkit-transition: background-color 0.4s ease-in-out;
+    -moz-transition: background-color 0.4s ease-in-out;
+    -o-transition: background-color 0.4s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
+    cursor: pointer;
+  }
+  .toggle-btn.active {
+    background: #129b4c;
+  }
+  .toggle-btn.active .round-btn {
+    left: 27px;
+  }
+  .toggle-btn .round-btn {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 3px;
+    top: 70%;
+    margin-top: -15px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .toggle-btn .cb-value {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+.punch-details {
+    margin-top: 8%;
+}
+.punch-details p {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3f9b;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 5%;
+}
+.punch-details p span {
+    color: #000;
+    font-weight: 600;
+}
+.submit-report-btn {
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.submit-report-btn .btn {
+    width: auto;
+    background: #1e1f20 !important;
+    padding: 6px 20px;
+    border-radius: 15px !important;
+    color: #fff;
+}
+.alert-primary {
+    padding-left: 5% !important;
+}
+
+.pageTitle h4 {
+    color: #fff;
+    padding: 20px 18px 15px;
+    font-weight: 600;
+}
+.pageTitle h4 img {
+    width: 20px;
+    margin-right: 9px;
+    margin-top: -2px;
+    cursor: pointer;
+}
+.attendance-history {
+    background: #fff;
+    margin-bottom: 80px;
+}
+.attendance-history table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.attendance-history th {
+    font-weight: 500;
+    text-align: center !important;
+}
+.attendance-history td, .attendance-history th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: #000;
+    font-size: 14px;
+}
+.attendance-history td {
+    font-size: 13px;
+    font-weight: 400;
+}
+.attendance-history td:nth-child(1) {
+    text-align: center !important;
+}
+
+.leaveList {
+    background: #fff;
+}
+.leaveList ul {
+    padding-left: 0px;
+    list-style-type: none;
+    padding: 0 5%;
+}
+.leaveList ul li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #cccccc5e;
+    padding: 15px 0;
+}
+.leave-details h5 {
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.leave-details span {
+    color: #000000c7;
+    font-size: 14px;
+}
+.leave-status {
+    color: #fff;
+    border-radius: 4px;
+    padding: 0px 10px 2px;
+    font-size: 13px;
+}
+.leave-status-list {
+    align-self: flex-start;
+}
+.status-approved {
+    background: #0b930b;
+}
+.status-pending {
+    background: #ff9100;
+}
+.status-rejected {
+    background: #ff1414;
+}
+.add-leave-btn {
+    position: fixed;
+    bottom: 55px;
+    right: 15px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: 100px;
+    width: 37px;
+    height: 37px;
+}
+.add-leave-btn img {
+    width: 40px;
+    cursor: pointer;
+}
+
+
+/****** Apply Leave *******/
+input[name="leaveType"] {
+	accent-color: #2e3997;
+}
+.apply-leave-section {
+    background: #fff;
+}
+.apply-leave-section label {
+    font-weight: 500;
+}
+.calendar-icon {
+    position: absolute;
+    width: 15px;
+    top: 41px;
+    right: 10px;
+    opacity: 0.4;
+}
+.apply-leave-section .form-group {
+    padding: 0px;
+}
+.apply-leave-section .desc .form-control{
+    border-color: transparent;
+    padding: 6px 16px !important;
+    color: #000;
+    background: #f9f9f9;
+    font-size: 14px !important;
+}
+.apply-leave-section .desc hr {
+    border-width: 3.5px;
+    margin-top: 5%;
+}
+.apply-leave-section .myRadioGroup {
+    padding: 20px 5% 0;
+}
+.apply-leave-section .formgroup-all {
+    padding: 0 5%;
+}
+.apply-leave-section .formgroup-all .h-100px {
+    height: 100px !important;
+}
+.apply-leave-section .formgroup-all select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 2px 2px 2px;
+    border: none;
+    background: #f9f9f9 url("../images/three-o-clock-clock.png") no-repeat 130px center !important;
+    background-size: 16px !important;
+  }
+
+@media (max-width: 600px) {
+    body {
+      overflow-x: hidden;
+      background-image: url(../images/inner-bg.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }

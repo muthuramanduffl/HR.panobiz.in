@@ -1,0 +1,6 @@
+.ui-datepicker td.holiday a, .ui-datepicker td.holiday a:hover {
+  background: none #ff5b71;
+  border: 1px solid #ff5b71;
+  color: #fff !important;
+  border-radius: 100px;
+}
